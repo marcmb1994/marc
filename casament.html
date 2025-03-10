@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El nostre Casament</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #ff9aa2;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .photo-gallery img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .form-container input, .form-container select, .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #ff9aa2;
+            color: white;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #ff6b81;
+        }
+        .mapa, .autobus {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        .confirmar-assistencia {
+            display: flex;
+            justify-content: space-between;
+        }
+        .confirmar-assistencia div {
+            width: 48%;
+        }
+        .contact-info {
+            background-color: #f7d0d4;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>El nostre Casament</h1>
+    <p>Estem molt emocionats de compartir aquest moment amb vosaltres!</p>
+</header>
+
+<section class="container">
+    <h2>Detalls del Casament</h2>
+    <p><strong>Data:</strong> 25 d'octubre de 2025</p>
+    <p><strong>Església:</strong> Església de Sant Martí Sarroca</p>
+    <p><strong>Hora de la cerimònia:</strong> 12:00</p>
+    <p><strong>Dinarem a:</strong> Masia Josep Masachs</p>
+    
+    <!-- Autobús entre església i masia -->
+    <img class="autobus" src="autobus.png" alt="Autobús entre l'església i la masia">
+</section>
+
+<section class="container">
+    <h2>Confirmació d'Assistència</h2>
+    <div class="form-container">
+        <form action="submit_assistència.php" method="POST">
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="attending">Assistiràs?</label>
+            <select id="attending" name="attending" required>
+                <option value="yes">Sí</option>
+                <option value="no">No</option>
+            </select>
+            
+            <div class="confirmar-assistencia">
+                <div>
+                    <label for="parella">Vindràs amb parella?</label>
+                    <select id="parella" name="parella">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="transport">Com vindràs?</label>
+                    <select id="transport" name="transport" required>
+                        <option value="barcelona">Autobús des de Barcelona</option>
+                        <option value="comaruga">Autobús des de Coma-Ruga</option>
+                        <option value="mitjans_propis">Amb mitjans propis</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="alergies">Tens alguna al·lèrgia o intolerància?</label>
+            <input type="text" id="alergies" name="alergies" placeholder="Escriu-les aquí...">
+            
+            <button type="submit">Confirmar Assistència</button>
+        </form>
+    </div>
+</section>
+
+<section class="container">
+    <h2>Galeria de Fotos</h2>
+    <div class="photo-gallery">
+        <img src="foto1.jpg" alt="Foto de la parella">
+        <img src="foto2.jpg" alt="Foto de la parella">
+        <img src="foto3.jpg" alt="Foto de la parella">
+    </div>
+</section>
+
+<section class="container">
+    <h2>Detalls del Registre de Bodes</h2>
+    <p>Per a aquells que volen fer-nos un regal, us convidem a visitar el nostre registre de bodes aquí: <a href="registre_bodes.com">Registre de Bodes</a></p>
+</section>
+
+<section class="contact-info">
+    <p>Si tens preguntes, contacta'ns a: <strong>info@casament.com</strong></p>
+</section>
+
+</body>
+</html>
